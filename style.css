@@ -1,0 +1,45 @@
+/* .container{
+ 
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: center;
+    width: 600px;
+    margin: 0 auto;
+   
+
+}
+/* The grids, they should be squares */
+/* .theGrids{
+    width: 25px;
+    height: 25px;
+    border: solid 10px;
+} */ */
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .container>div {
+    border: 5px solid black;
+    height: 35px;
+    width: 35px;
+  }
+  
+  .container>div:nth-child(17n + 1) {
+    width: 100%;
+    border: 0;
+    height: 0;
+  }
+  
+
+
+  .hoverEffect{
+    
+  }
