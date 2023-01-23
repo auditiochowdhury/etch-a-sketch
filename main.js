@@ -21,9 +21,18 @@ CreateGrid()
 //For each time you hover on one of the square grids, we want to change the color the color of the div, so on hover we add class i think
 document.querySelector('.theGrids').onclick = changeColor
 
+
+//Targeting all the squares
+let squares = document.querySelectorAll(".theGrids")
+
+
 //Function that changes the color of the div
 function changeColor(){
     console.log('Click!')
-    alert('clicked!')
-    // document.querySelector('.theGrids').style.backgroundColor = yellow
+    this.style.backgroundColor = 'black'
+}
+
+//for loop for all the squares to change their color
+for(const square of squares){
+    square.onmouseenter	 = changeColor
 }
