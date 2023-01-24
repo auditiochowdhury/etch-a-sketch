@@ -4,16 +4,17 @@ console.log('Hello')
 
 
 //Grab the container div and store it in a variable
-const parentDiv = document.querySelector('.container')
+let parentDiv = document.querySelector('.container')
 
 // Append the grid element we made to the container Div in our html file
 function CreateGrid(){
-    for(let i= 0;i<273;i+=1){
+    for(let i= 0;i<256;i++){
         let grid= document.createElement('div')
         grid.classList.add("theGrids");
         parentDiv.appendChild(grid)
     }
 }
+//273
 //Calling the grid
 CreateGrid()
 
@@ -36,3 +37,49 @@ function changeColor(){
 for(const square of squares){
     square.onmouseenter	 = changeColor
 }
+
+//Create a function event listener when clicking on the top button to prompt user for how many squares they want
+let button = document.querySelector('.ask')
+
+button.addEventListener('click', howMany)
+
+function howMany(){
+    let question = prompt('How many squares? Has to be less than 100!')
+    let final = parseInt(question)
+    console.log(question)
+    console.log(final)
+    question = final
+    console.log(typeof question)
+    let meep = question * question
+    let finalNum = meep + question
+    
+    console.log(meep)
+    console.log(question)
+    
+    if (prompt && question <= 100) {
+        let theSquares = document.querySelector('.container')
+        while (theSquares.hasChildNodes()) {
+            theSquares.removeChild(theSquares.firstChild);
+          }
+        parentDiv.setAttribute('style', `grid-template-columns: repeat(${question}, 2fr); grid-template-rows: repeat(${question}, 2fr);`);
+
+          
+       
+        
+        for(let i=0; i<meep;i++){
+        let grid= document.createElement('div')
+        grid.classList.add("theGrids");
+        grid.addEventListener('mouseover', function(event){
+            event.target.style.backgroundColor = 'black';
+        })
+        parentDiv.appendChild(grid)
+        }
+
+    }else if (!prompt && !question){
+        return
+    }
+
+
+}
+
+

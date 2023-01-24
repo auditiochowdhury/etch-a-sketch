@@ -9,35 +9,55 @@
 
 }
 /* The grids, they should be squares */
-/* .theGrids{
-    width: 25px;
-    height: 25px;
-    border: solid 10px;
-} */ */
+ .theGrids{
+  background-color: white;
+    border: 1px solid black;
+} 
 
 
 * {
+
     box-sizing: border-box;
+  }
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .container {
-    display: flex;
+    display: inline-grid;
+    grid-template-columns: repeat(16, 2fr);
+    grid-template-rows: repeat(16, 2fr);
+    border: 5px solid white;
+    border-radius: 1px;
+    height: 575px;
+    width: 575px;
+    background-color: white;
+    box-shadow: 10px 10px;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; */
   }
   
-  .container>div {
+  /* .container>div {
     border: 5px solid black;
     height: 35px;
     width: 35px;
   }
-  
-  .container>div:nth-child(17n + 1) {
+   */
+  /* .container>div:nth-child(17n + 1) {
     width: 100%;
     border: 0;
     height: 0;
-  }
+  } */
   
+  .topButton{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
 
 
   .hoverEffect{
